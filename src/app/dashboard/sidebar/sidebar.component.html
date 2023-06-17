@@ -1,0 +1,123 @@
+<section class="container-sidebar" id="sidebar" #sidebar>
+
+    <div class="content-header">
+        <span class="header-logo">
+            <img src="img/logo.png"/>
+        </span>
+        <span class="header-text" id="text-logo" #textLogo >Netflix</span>
+    </div>
+
+    <div class="content-navigation">
+
+        <div class="navigation-top">
+            <div class="navigation-search">
+                <div class="search-input">
+                    <span class="input-icon">
+                        <i class='bx bx-search'></i>
+                    </span>
+                    <input type="text" placeholder="Buscar" id="search-input" #searchInput >
+                </div>
+            </div>
+
+
+            <div class="navigation-menu">
+                <ul class="menu-item">
+                    <div class="title-menu" >
+                        <span class="title" #title id="text-title">Navegacion</span>
+                        <span class="line" #line id="text-line"></span>
+                    </div>  
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Inventario</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Clientes</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Reportes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="navigation-bottom" >
+
+            <div class="navigation-accout">
+                <ul class="account-item">
+                    <div class="title-account" >
+                        <span class="title" id="account-text" #cAtitle>Cuenta</span>
+                        <span class="line" id="account-line" #cAline></span>
+                    </div>  
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text-account" [ngClass]="{'accout-text-link': isAccountLinkTextVisible}" (click)="toggleSidebar()">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text-account" [ngClass]="{'accout-text-link': isAccountLinkTextVisible}" (click)="toggleSidebar()">Inventario</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text-account" [ngClass]="{'accout-text-link': isAccountLinkTextVisible}" (click)="toggleSidebar()">Ventas</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>    
+
+            <div class="navigation-dark">
+
+            </div>
+
+        </div>
+    </div>
+</section>
