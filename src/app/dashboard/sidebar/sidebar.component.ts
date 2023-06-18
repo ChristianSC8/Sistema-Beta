@@ -58,7 +58,4 @@ export class SidebarComponent {
     
   }
 
-  stopClickPropagation(event: Event): void {
-    event.stopPropagation();
-  }
 }

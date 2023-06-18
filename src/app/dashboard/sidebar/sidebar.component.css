@@ -139,7 +139,7 @@
     left: 50%;
     height: 3px;
     width: 30px;
-    /* background: #D7D7D7; */
+    background: #D7D7D7;
     transform: translateX(-50%);
     border-radius: 30px;
     display: none;
@@ -165,7 +165,7 @@
 }
 .content-navigation .navigation-top .navigation-menu .menu-item .item .link:hover{
     color: #fff;
-    background: #4070f4;
+    background: #D7D7D7;
     display: flex;
     align-items: center;
 }
@@ -249,7 +249,7 @@
 }
 .content-navigation .navigation-bottom .navigation-accout .account-item .item .link:hover {
     color: #fff;
-    background: #4070f4;
+    background: #D7D7D7;
     display: flex;
     align-items: center;
 }
