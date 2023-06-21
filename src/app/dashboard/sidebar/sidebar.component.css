@@ -148,6 +148,11 @@
     display: block;
 }
 
+
+
+
+
+
 /* ----------items  */
 
 .content-navigation .navigation-top .navigation-menu .menu-item .item {
@@ -163,6 +168,7 @@
     color: #707070;
     overflow: hidden;
 }
+
 .content-navigation .navigation-top .navigation-menu .menu-item .item .link:hover{
     color: #fff;
     background: #D7D7D7;
@@ -179,16 +185,94 @@
 .content-navigation .navigation-top .navigation-menu .menu-item .item .link .link-icon i{
     font-size: 25px;
 }
+
+/* implementado el dropp open y close -------------------------------------------------------------*/
 .content-navigation .navigation-top .navigation-menu .menu-item .item .link .link-text{
+    width: 100%;
     opacity: 1;
     /* background: red; */
     transition: opacity 0.5s ease;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
 }
+
+
+
+
+
+/* Aminacion del icono trasition -------------------------------------------------------------*/
+.content-navigation .navigation-top .navigation-menu .menu-item .item .link .link-text .dropdown-open{
+    font-size: 25px;
+}
+.content-navigation .navigation-top .navigation-menu .menu-item .item .link .link-text .dropdown-open.rotate-icon{
+    rotate: 90deg;
+}
+/* Aminacion del icono trasition -------------------------------------------------------------*/
+
+
+
 .content-navigation .navigation-top .navigation-menu .menu-item .item .link .link-text.text-link {
     opacity: 0;
     transition: opacity 0.3s ease;
 }   
+/* -----------------------------------------------------menu droop opne  --close */
+
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown{
+    width: calc(100% - 25px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* background: pink; */
+    height: 0;
+    transition: height .4s;
+    overflow: hidden;
+    border-left: 3px;
+    margin-left: 25px;
+}   
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown.active-dropdown{
+    height: 108px
+    
+}
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown .dropdown-option{
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+    width: 100%;
+}
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown .dropdown-option.visible-dropdown {
+    display: block;
+    opacity: 1;
+    max-height: 200px;
+}
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown .dropdown-option .option{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    /* background: orange; */
+    color: #707070;
+}
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown .dropdown-option .option:hover{
+    background: gray;
+    color: #fff;
+}
+.content-navigation .navigation-top .navigation-menu .menu-item .item .dropdown .dropdown-option .option .option-icon{
+    height: 50px;
+    min-width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: red; */
+}
+
+
+/* -----------------------------------------------------menu droop */
 
 /* --avigation-bottom--- */
 
@@ -201,7 +285,7 @@
     /* height: 350px; */
     width: 100%;
     padding: 0 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .content-navigation .navigation-bottom .navigation-accout .account-item .title-account{
     position: relative;
@@ -258,7 +342,7 @@
     min-width: 55px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
 } 
 .content-navigation .navigation-bottom .navigation-accout .account-item .item .link .link-icon i {
     font-size: 25px;
@@ -284,3 +368,6 @@
     /* background: rgb(160, 154, 154); */
     border-top: 1px solid #D7D7D7;
 }
+
+
+

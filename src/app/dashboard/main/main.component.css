@@ -1,0 +1,25 @@
+.panel-container{
+    background: red;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+.panel-container .panel-content{
+    width: 100%;
+    height: 100%;
+    background: green;
+}
+.panel-container .panel-content .content{
+    width: 100%;
+    height: 100%;
+    display: none;
+}   
+.panel-container .panel-content .content.active{
+    display: block;
+}
+
+
+
+
+
+

@@ -7,15 +7,25 @@ import { SidebarService } from 'src/app/shared/sidebar.service';
 })
 export class SidebarComponent {
 
-
   constructor(private sidebarService: SidebarService) {}
 
+//Esto es para expandir y contraer el sidebar -------------------------->
+
+  seleccionarTab(indice: number): void {
+      this.sidebarService.seleccionarTab(indice);
+    }
+    
+//Esto es para expandir y contraer el sidebar --------------------------!
+
+
+
+
+//Esto es para expandir y contraer el sidebar --------------------------
   ngOnInit(): void {
     this.sidebarService.sidebarToggle.subscribe(() => {
       this.toggleSidebar();
     });
   }
-
   @ViewChild('sidebar') sidebar!: ElementRef;
   @ViewChild('searchInput') searchInput!: ElementRef;
   @ViewChild('title') title!: ElementRef;
@@ -54,8 +64,26 @@ export class SidebarComponent {
     this.isTextLinkVisible = !this.isTextLinkVisible;
     //esconder los textos del accot 
     this.isAccountLinkTextVisible = !this.isAccountLinkTextVisible;
+  }
+
+
+
+  //Esto es para expandir y contraer el sidebar --------------------------
+  @ViewChild('openButton') openButton!: ElementRef;
+  @ViewChild('dropdownOpen') dropdownOpen!: ElementRef;
+  @ViewChild('dropdown') dropdown!: ElementRef;
+  @ViewChild('dropdownOption') dropdownOption!: ElementRef;
+
+  isContentOptionVisible = false;
+  isPanelActive = false;
+  isIcoActive = false;
+
+  toggleContentOption() {
+    this.dropdownOpen.nativeElement.classList.toggle('rotate-icon');
+    this.dropdown.nativeElement.classList.toggle('active-dropdown');
+    this.dropdownOption.nativeElement.classList.toggle('visible-dropdown');
+
 
     
   }
-
-}
+} 

@@ -4,7 +4,7 @@
         <span class="header-logo">
             <img src="img/logo.png"/>
         </span>
-        <span class="header-text" id="text-logo" #textLogo >Netflix</span>
+        <span class="header-text" id="text-logo" #textLogo >QisPCS</span>
     </div>
 
     <div class="content-navigation">
@@ -27,23 +27,44 @@
                         <span class="line" #line id="text-line"></span>
                     </div>  
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(0)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
                             <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Dashboard</span>
                         </a>
                     </li>
+                    <!-- --------------------trabajamos solo enesta parte---------------- -->
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link"  id="open-button" #openButton (click)="toggleContentOption()">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
-                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Inventario</span>
+                            <div class="link-text" >
+                                <span>Inventario</span>
+                                <i class='bx bx-chevron-right dropdown-open' id="dropdown-open" #dropdownOpen [class.rotate-icon]="isIcoActive"></i> <!--  no quitar el id-->
+                            </div>
                         </a>
+                        <div class="dropdown" #dropdown [class.active-dropdown]="isPanelActive">
+                            <ul class="dropdown-option" #dropdownOption [ngClass]="{'visible-dropdown': isContentOptionVisible}">
+                                <li class="option" (click)="seleccionarTab(1)">
+                                    <div class="option-icon">
+                                        <i class='bx bxl-discord-alt'></i>
+                                    </div>
+                                    <span href="#">Categoria</span>
+                                </li>
+                                <li class="option" (click)="seleccionarTab(2)">
+                                    <div class="option-icon">
+                                        <i class='bx bxl-discord-alt'></i>
+                                    </div>
+                                    <span href="#">Producto</span>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+                    <!-- --------------------trabajamos solo enesta parte---------------- -->
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(3)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
@@ -51,7 +72,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(4)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
@@ -59,7 +80,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(5)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
@@ -67,7 +88,15 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(6)">
+                            <div class="link-icon">
+                                <i class='bx bxs-folder-minus'></i>
+                            </div>
+                            <span class="link-text" [ngClass]="{'text-link': isTextLinkVisible}" (click)="toggleSidebar()">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link" (click)="seleccionarTab(7)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
@@ -88,7 +117,7 @@
                         <span class="line" id="account-line" #cAline></span>
                     </div>  
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(8)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
@@ -96,7 +125,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="#" class="link">
+                        <a href="#" class="link" (click)="seleccionarTab(9)">
                             <div class="link-icon">
                                 <i class='bx bxs-folder-minus'></i>
                             </div>
