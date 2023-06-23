@@ -1,0 +1,135 @@
+<section class="container-category" #container>
+    <div class="content-header">
+        <div class="header-text">
+            <span>Invetario / Categoria</span>
+        </div>
+        <span class="header-line"></span>
+    </div>
+    <div class="content-category">
+        <div class="category-options">
+            <div class="option-left">
+                <button class="button-create" #open (click)="openModal()">
+                    <div class="create-ico">
+                        <i class="fa-regular fa-plus"></i>
+                    </div>
+                    <span class="text">Nuevo</span>
+                </button>
+
+                <button class="button-rows">
+                    <div class="rows-ico">
+                        <div class="ico">
+                            <i class='bx bx-window-alt'></i>
+                        </div>
+                        <span class="text">Filas</span>
+                    </div>
+                    <div class="row">
+                        <i class='bx bx-chevron-right' ></i>
+                    </div>
+                </button>
+            </div>
+            <div class="option-right">
+                <div class="search-input">
+                    <span class="input-icon">
+                        <i class='bx bx-search'></i>
+                    </span>
+                    <input type="text" placeholder="Buscar" id="search-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="category-table">
+            <div class="container-table">
+
+                <div class="content-table">
+
+                    <div class="table-header">
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Fecha</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                              </tr>
+                            </thead>
+                          </table>
+                    </div>
+
+                    <div class="table">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Procesadores</td>
+                                    <td>Amd y intel</td>
+                                    <td>12/34/3034</td>
+                                    <td>activo</td>
+                                    <td>editad</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-pagination">
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------------------------modal------------------------- -->
+
+<section class="container-form" #modal>
+
+    <div class="content-name-close">
+        <span>Nueva Categoria</span>
+        <div class="button-close">
+            <i class="fa-solid fa-xmark" #close (click)="closeModal()"></i>
+        </div>
+    </div>
+
+    <div class="content-panel">
+        <div class="content-img">
+            <div class="loro">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="content-form">
+            <form action="#">
+                <div class="content-items">
+
+                    <div class="content-name">
+                        <input type="text">
+                        <span>Nombre</span>
+                    </div>
+                    <div class="content-description">
+                        <textarea name=""></textarea>
+                        <span>Descripcion</span>
+                    </div>
+
+                    <div class="content-estado">
+                        <div class="estado">
+                            <input type="radio" id="activo" name="estado" value="activo" checked>
+                            <span>Activo</span>
+                        </div>
+                        <div class="estado">
+                            <input type="radio" id="inactivo" name="estado" value="inactivo">
+                            <span>Inactivo</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content-bottom">
+                    <button type="submit" class="btn-create">Crear</button>
+                    <button type="button" class="btn-cancel" #cancel (click)="closeModal()">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>  
