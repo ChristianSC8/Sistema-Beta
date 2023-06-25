@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { StartComponent } from './start/start.component';
 import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
+import { ClientComponent } from './client/client.component';
 
 
 @NgModule({
   declarations: [
     StartComponent,
     ProductComponent,
-    CategoryComponent
+    CategoryComponent,
+    ClientComponent
   ],
   imports: [
     CommonModule
@@ -17,7 +19,8 @@ import { CategoryComponent } from './category/category.component';
   exports:[
     StartComponent,
     ProductComponent,
-    CategoryComponent
+    CategoryComponent,
+    ClientComponent
   ]
 })
 export class MainContentModule { }

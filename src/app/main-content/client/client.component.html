@@ -1,7 +1,7 @@
-<section class="container-product" #container>
+<section class="container-category" #container>
     <div class="content-header">
         <div class="header-text">
-            <span>Invetario / Producto</span>
+            <span>Clientes</span>
         </div>
         <span class="header-line"></span>
     </div>
@@ -45,16 +45,16 @@
                     <div class="table-header">
                         <table>
                             <thead>
-                              <tr>
-                                <th>Codigo</th>
-                                <th>Categoria</th>
-                                <th>Producto</th>
-                                <th>Fecha</th>
-                                <th>Precio</th>
-                                <th>Stock</th>
-                                <th>Stock minimo</th>
-                                <th>Acciones</th>
-                              </tr>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Sexo</th>
+                                    <th>Documento</th>
+                                    <th>Direccion</th>
+                                    <th>Telefono</th>
+                                    <th>Acciones</th>
+                                </tr>
                             </thead>
                           </table>
                     </div>
@@ -63,14 +63,14 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>3034220560</td>
-                                    <td>Procesador</td>
-                                    <td>Intel core i3</td>
-                                    <td>12/34/5034</td>
-                                    <td>356.4</td>
-                                    <td>10</td>
-                                    <td>2</td>
-                                    <td>unpdate</td>
+                                    <td>1</td>
+                                    <td>Christian</td>
+                                    <td>Supo</td>
+                                    <td>32884924</td>
+                                    <td>Hombre</td>
+                                    <td>Jr.upeu</td>
+                                    <td>934550623</td>
+                                    <td>update</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -86,58 +86,70 @@
     </div>
 </section>
 
-<!-- ----------------------modal------------------------ -->
 
-<section class="container-modal" #modal>
+<section class="container-modal" #modal >
     <div class="modal-header">
-        <span>Nuevo Producto</span>
+        <span>Nuevo Cliente</span>
         <div class="close-icon">
             <i class="fas fa-regular fa-xmark" #close (click)="closeModal()"></i>
         </div>
     </div>
-    <form  action="" class="modal-form">
-        <div class="modal-content">
-            <div class="content-img">
-                <div class="input-image">
-                    <span>bosta -vo</span>
-                </div>  
-            </div>
-            <div class="content-inputs">
-                <div class="input-name">
-                    <input type="text">
-                    <span class="text-name">Nombre</span>
-                </div>
-                <div class="tree-inputs">
-                    <div class="input-price">
+    <form action="" class="modal-form">
+        <div class="inputs-content">
+
+            <div class="content-top">
+                <div class="top-inputs">
+                    <div class="input-name">
                         <input type="text">
-                        <span class="text-name">Precio</span>
+                        <span class="text-name">Nombre</span>
                     </div>
-                    <div class="input-stock">
+                    <div class="input-last">
                         <input type="text">
-                        <span class="text-name">Stock</span>
+                        <span class="text-name">Nombre</span>
                     </div>
-                    <div class="input-minstock">
-                        <input type="text">
-                        <span class="text-name">Minstock</span>
-                    </div>
-                </div>
-                <div class="input-description">
-                    <textarea></textarea>
-                    <span class="text-name">Description</span>
                 </div>
 
-                <div class="two-inputs">
-                    <div class="input-code">
+
+                <div class="mid-input">
+                    <div class="input-document">
                         <input type="text">
-                        <span class="text-name">Codigo</span>
+                        <span class="text-name">Documento</span>
                     </div>
-                    <div class="input-category">
-                        <input type="text">
-                        <span class="text-name">Categoria</span>
+                    <div class="input-sexo">
+                        
+                        <div class="sexo-content">
+                            <div class="content-man">
+                                <input type="radio" id="hombre" name="sexo" value="hombre" checked>
+                                <span>Hombre</span>
+                            </div>
+                            <div class="content-woman">
+                                <input type="radio" id="mujer" name="sexo" value="mujer">
+                                <span>Mujer</span>
+                            </div>
+                        </div>
+                        <p class="text-name">Sexo<p>
                     </div>
                 </div>
-                
+
             </div>
+            <div class="content-line">
+                <div class="line"></div>
+            </div>
+            <div class="content-bottom">
+                <span>Información Adicional</span>
+                <div class="content-inputs">
+                    <div class="input-direction">
+                        <input type="text">
+                        <span class="text-name">Direccion</span>
+                    </div>
+                    <div class="input-telefono">
+                        <input type="text">
+                        <span class="text-name">Telefono</span>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         <div class="modal-buttons">
             <div class="button-create">

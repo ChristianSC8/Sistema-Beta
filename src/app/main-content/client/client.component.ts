@@ -1,11 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-client',
+  templateUrl: './client.component.html',
+  styleUrls: ['./client.component.css']
 })
-export class ProductComponent {
+export class ClientComponent {
   @ViewChild('open') openBtn!: ElementRef;
   @ViewChild('container') container!: ElementRef;
   @ViewChild('close') closeBtn!: ElementRef;

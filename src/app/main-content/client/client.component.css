@@ -1,10 +1,11 @@
 .container-category{
     position: relative;
-    width: 100%; 
+    width: 100%;
     height: 100%; 
     /* background: pink; */
     display: flex;
     flex-direction: column;
+    z-index: 10;
 }
 .container-category.active-filter{
     filter: blur(5px);
@@ -229,12 +230,10 @@
     /* background: green; */
 } 
 
-
-/* -------------------------------modal----------------------------- */
-
-.container-form{
-    width: 450px;
-    height: 350px;
+/* --------------------------------modal----------------------- */
+.container-modal{
+    width: 500px;
+    height: 400px;
     background: #fff;
     border: 1px solid #D4D4D4;
     border-radius: 5px;
@@ -248,157 +247,259 @@
     transition: all 300ms ease;
     opacity: 0;
     transform: translateY(-50px);
-    /* display: none; */
+    z-index: 20;
 }
-.container-form.active-modal{
-    width: 500px;
-    height: 350px;
+.container-modal.active-modal{
+    width: 600px;
+    height: 410px;
     box-shadow: -10px 20px 50px rgba(0,0,0,0.09);
     opacity: 1;
     /* display: block; */
 }
-.container-form .content-name-close{
-
+.container-modal .modal-header{
     width: 100%;
     height: 50px;
-    /* background: rgb(233, 233, 232); */
+    /* background: paleturquoise; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
 }
-
-.container-form .content-panel {
+.container-modal .modal-header .close-icon i{
+    font-size: 20px;
+    cursor: pointer;
+}
+.container-modal .modal-form{
     width: 100%;
     height: calc(100% - 50px);
-    display: flex;
-}
-.container-form .content-panel .content-img{
-    width: 150px;
-    padding:  0 20px 20px 20px;
     /* background: red; */
 }
-.container-form .content-panel .content-img .loro{
+.container-modal .modal-form .inputs-content{
     width: 100%;
-    height: 135px;
-    border: 1px solid;
-    margin-top: 15px;
+    height: calc(100% - 80px);
 }
-.container-form .content-panel .content-form{
-    width: calc(100% - 150px);
-    /* background: rgb(201, 206, 201); */
-    padding: 0 20px 20px 0;
-}
-.container-form .content-panel .content-form form {
-    width: 100%;
-    height: 100%;
+.container-modal .modal-form .inputs-content .content-top{
+    padding-top: 25px;
     display: flex;
     flex-direction: column;
+    gap: 35px;
+}
+.container-modal .modal-form .inputs-content .content-top .top-inputs{
+    width: 100%;
+    height: 40px;
+    /* background: red; */
+    display: flex;
     justify-content: space-between;
+    padding: 0 20px;
+    gap: 15px;
 }
-.container-form .content-panel .content-form form .content-items{
-    display: flex;
-    flex-direction: column;
-}
-.container-form .content-panel .content-form form .content-items .content-name{
-    width: 100%;
-    /* background: red; */
-    /* border: 1px solid; */
-    height: 45px;
-    margin-top: 15px;
-    position: relative;
-}
-.container-form .content-panel .content-form form .content-items .content-name input{
+.container-modal .modal-form .inputs-content .content-top .top-inputs .input-name{
     width: 100%;
     height: 100%;
-    padding: 10px;
-    border: 1px solid #000;
-    outline: none;
-    border-radius: 3px;
-    position: absolute;
-}
-.container-form .content-panel .content-form form .content-items .content-name span{
+    background: papayawhip;
+    flex: 1;
     position: relative;
-    z-index: 1;
-    top: -10px;
-    left: 10px;
-    background: #FFF;
-    padding: 2px 8px;
 }
-.container-form .content-panel .content-form form .content-items .content-description{
-    width: 100%;
-    height: 60px;
-    /* background: olive; */
-    /* border: 1px solid; */
-    position: relative;
-    margin-top: 30px;
-}
-.container-form .content-panel .content-form form .content-items .content-description textarea{
+.container-modal .modal-form .inputs-content .content-top .top-inputs .input-name input{
     width: 100%;
     height: 100%;
-    padding: 10px;
-    border: 1px solid #000;
+    font-size: 16px;
     outline: none;
-    border-radius: 3px;
+    border: 1px solid #000;
+}
+.container-modal .modal-form .inputs-content .content-top .top-inputs .input-name .text-name{
     position: absolute;
-    resize: none;
+    top: -23px;
+    left: 0;
 }
-.container-form .content-panel .content-form form .content-items .content-description span{
-    position: relative;
-    z-index: 1;
-    top: -10px;
-    left: 10px;
-    background: #FFF;
-    padding: 2px 8px;
-}
-.container-form .content-panel .content-form form .content-items .content-estado{
+.container-modal .modal-form .inputs-content .content-top .top-inputs .input-last{
     width: 100%;
-    height: 45px;
-    /* background: olive; */
-    /* border: 1px solid; */
-    display: flex;
-    margin-top: 10px;
+    height: 100%;
+    /* background: lightcoral; */
+    flex: 1;
+    position: relative;
 }
-.container-form .content-panel .content-form form .content-items .content-estado .estado{
+.container-modal .modal-form .inputs-content .content-top .top-inputs .input-last input{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #000;
+}
+.container-modal .modal-form .inputs-content .content-top .top-inputs .input-last .text-name{
+    position: absolute;
+    top: -23px;
+    left: 0;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input{
+    width: 100%;
+    height: 40px;
+    /* background: lightcoral; */
+    flex-direction: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 15px;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-document{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-document input{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #000;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-document .text-name{
+    position: absolute;
+    top: -23px;
+    left: 0;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* border: 1px solid #000; */
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo .sexo-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo .sexo-content .content-man {
     width: 120px;
-    /* background: red; */
     height: 100%;
+    /* background: rebeccapurple; */
     display: flex;
     align-items: center;
     gap: 10px;
-}   
-
-.container-form .content-panel .content-form form .content-items .content-estado .estado input{
+} 
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo .sexo-content .content-man input{
     width: 20px;
-    cursor: pointer;
     height: 20px;
+    cursor: pointer;
 }
-
-
-.container-form .content-panel .content-form form .content-bottom{
-    width: 100%;
-    height: 45px;
-    /* background: olive; */
-    /* border: 1px solid; */
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo .sexo-content .content-woman {
+    width: 120px;
+    height: 100%;
+    /* background: orange; */
     display: flex;
-    flex-direction: row-reverse;
-    gap: 20px;
-}
-.container-form .content-panel .content-form form .content-bottom .btn-cancel {
-    width: 130px;
-    height: 100%;
+    align-items: center;
+    gap: 10px;
+} 
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo .sexo-content .content-woman input{
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    background: none;
-    color: #000;
+}
+.container-modal .modal-form .inputs-content .content-top .mid-input .input-sexo .text-name{
+    position: absolute;
+    top: -23px;
+    left: 0;
+}
+.container-modal .modal-form .inputs-content .content-line{
+    width: 100%;
+    padding: 0 20px;
+    margin: 20px 0;
+}
+.container-modal .modal-form .inputs-content .content-line .line{
+    width: 100%;
+    height: 1px;
+    background: #000;
+}
+
+.container-modal .modal-form .inputs-content .content-bottom{
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+}
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs{
+    width: 100%;
+    height: 40px;
+    /* background: orange; */
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs .input-direction{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs .input-direction input{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
     border: 1px solid #000;
-    border-radius: 3px;
 }
-.container-form .content-panel .content-form form .content-bottom .btn-create {
-    width: 130px;
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs .input-direction .text-name{
+    position: absolute;
+    top: -23px;
+    left: 0;
+}
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs .input-telefono{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs .input-telefono input{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #000;
+}
+.container-modal .modal-form .inputs-content .content-bottom .content-inputs .input-telefono .text-name{
+    position: absolute;
+    top: -23px;
+    left: 0;
+}
+
+
+
+.container-modal .modal-form .modal-buttons{
+    width: 100%;
+    height: 80px;
+    /* background: palevioletred; */
+    padding: 0 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+
+.container-modal .modal-form .modal-buttons .button-create{
+    width: 120px;
+    height: 45px;
+}
+.container-modal .modal-form .modal-buttons .button-create button{
+    width: 100%;
     height: 100%;
     cursor: pointer;
-    background: blue;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
+    /* background: papayawhip; */
+    outline: none;
+    border: 1px solid #000;
+}
+.container-modal .modal-form .modal-buttons .button-cancel{
+    width: 120px;
+    height: 45px;
+}
+.container-modal .modal-form .modal-buttons .button-cancel button{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* background: papayawhip; */
+    outline: none;
+    border: 1px solid #000;
 }
