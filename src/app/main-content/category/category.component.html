@@ -45,10 +45,10 @@
                     <div class="table-header">
                         <table>
                             <thead>
-                              <tr>
+                              <tr >
+                                <th>id</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
-                                <th>Fecha</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                               </tr>
@@ -59,12 +59,15 @@
                     <div class="table">
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>Procesadores</td>
-                                    <td>Amd y intel</td>
-                                    <td>12/34/3034</td>
-                                    <td>activo</td>
-                                    <td>editad</td>
+                                <tr *ngFor="let item of listCategory">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.descripcion}}</td>
+                                    <td>{{getEstadoLabel(item.estado)}}</td>
+                                    <td>
+                                        <button (click)="selectItem(item)">update</button>
+                                        <button  (click)="delete(item.id)">delete</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -98,15 +101,15 @@
             </div>
         </div>
         <div class="content-form">
-            <form action="#">
+            <form [formGroup]="formCategory">
                 <div class="content-items">
 
                     <div class="content-name">
-                        <input type="text">
+                        <input type="text" formControlName="nombre">
                         <span>Nombre</span>
                     </div>
                     <div class="content-description">
-                        <textarea name=""></textarea>
+                        <textarea name="" formControlName="descripcion"></textarea>
                         <span>Descripcion</span>
                     </div>
 
@@ -116,7 +119,7 @@
                             <span>Activo</span>
                         </div>
                         <div class="estado">
-                            <input type="radio" id="inactivo" name="estado" value="inactivo">
+                            <input type="radio" id="inactivo" name="estado" value="inactivo" >
                             <span>Inactivo</span>
                         </div>
                     </div>
@@ -124,7 +127,7 @@
                 </div>
 
                 <div class="content-bottom">
-                    <button type="submit" class="btn-create">Crear</button>
+                    <button class="btn-create" (click)="save()" (click)="closeModal()">Crear</button>
                     <button type="button" class="btn-cancel" #cancel (click)="closeModal()">Cancelar</button>
                 </div>
 

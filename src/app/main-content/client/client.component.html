@@ -3,7 +3,7 @@
         <div class="header-text">
             <span>Clientes</span>
         </div>
-        <span class="header-line"></span>
+        <span class="header-line"></span> 
     </div>
     <div class="content-category">
         <div class="category-options">
@@ -48,9 +48,9 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Sexo</th>
+                                    <th>Apellido</th>                                 
                                     <th>Documento</th>
+                                    <th>Sexo</th>
                                     <th>Direccion</th>
                                     <th>Telefono</th>
                                     <th>Acciones</th>
@@ -62,15 +62,18 @@
                     <div class="table">
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Christian</td>
-                                    <td>Supo</td>
-                                    <td>32884924</td>
-                                    <td>Hombre</td>
-                                    <td>Jr.upeu</td>
-                                    <td>934550623</td>
-                                    <td>update</td>
+                                <tr *ngFor="let item of listClients">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.nombres}}</td>
+                                    <td>{{item.apellidos}}</td>
+                                    <td>{{item.documento}}</td>
+                                    <td>{{ getSexoLabel(item.sexo) }}</td>
+                                    <td>{{item.direccion}}</td>
+                                    <td>{{item.telefono}}</td>
+                                    <td>
+                                        <button (click)="selectItem(item)">update</button>
+                                        <button (click)="delete(item.id)">Delete</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -94,38 +97,38 @@
             <i class="fas fa-regular fa-xmark" #close (click)="closeModal()"></i>
         </div>
     </div>
-    <form action="" class="modal-form">
+    <form  [formGroup]="formClients" class="modal-form">
         <div class="inputs-content">
 
             <div class="content-top">
                 <div class="top-inputs">
                     <div class="input-name">
-                        <input type="text">
+                        <input type="text" formControlName="nombres" required="">
                         <span class="text-name">Nombre</span>
                     </div>
                     <div class="input-last">
-                        <input type="text">
-                        <span class="text-name">Nombre</span>
+                        <input type="text" formControlName="apellidos">
+                        <span class="text-name">Apellidos</span>
                     </div>
                 </div>
 
 
                 <div class="mid-input">
                     <div class="input-document">
-                        <input type="text">
+                        <input type="text" formControlName="documento">
                         <span class="text-name">Documento</span>
                     </div>
                     <div class="input-sexo">
                         
                         <div class="sexo-content">
                             <div class="content-man">
-                                <input type="radio" id="hombre" name="sexo" value="hombre" checked>
-                                <span>Hombre</span>
-                            </div>
-                            <div class="content-woman">
-                                <input type="radio" id="mujer" name="sexo" value="mujer">
-                                <span>Mujer</span>
-                            </div>
+                                <input type="radio" id="hombre" name="sexo" value="true" formControlName="sexo">
+                                <label for="hombre">Hombre</label>
+                              </div>
+                              <div class="content-woman">
+                                <input type="radio" id="mujer" name="sexo" value="false" formControlName="sexo">
+                                <label for="mujer">Mujer</label>
+                              </div>
                         </div>
                         <p class="text-name">Sexo<p>
                     </div>
@@ -139,11 +142,11 @@
                 <span>Información Adicional</span>
                 <div class="content-inputs">
                     <div class="input-direction">
-                        <input type="text">
+                        <input type="text" formControlName="direccion">
                         <span class="text-name">Direccion</span>
                     </div>
                     <div class="input-telefono">
-                        <input type="text">
+                        <input type="text" formControlName="telefono">
                         <span class="text-name">Telefono</span>
                     </div>
                 </div>
@@ -153,7 +156,7 @@
         </div>
         <div class="modal-buttons">
             <div class="button-create">
-                <button>Crear</button>
+                <button (click)="save()"(click)="closeModal()">Crear</button>
             </div>
             <div class="button-cancel" >
                 <button type="button" #cancel (click)="closeModal()">Cancelar</button>
